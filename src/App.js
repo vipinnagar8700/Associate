@@ -1,11 +1,14 @@
 import './App.css';
-import { Associate } from './Component/Associate';
+// import { MuiSearch } from './Component/MuiSearch';
+import { MuiSession } from './Component/MuiSession';
+// import { Associate } from './Component/Associate';
 
 function App() {
   return (
    
-   <Associate/>
-   
+  //  <Associate/>s
+  //  <MuiSearch/>
+  <MuiSession/>
   );
 }
 
