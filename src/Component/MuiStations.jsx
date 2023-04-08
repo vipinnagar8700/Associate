@@ -1,4 +1,4 @@
-import { Box, Stack, Button } from '@mui/material'
+import { Box, Stack, Button, Slider, Link, Divider } from '@mui/material'
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
@@ -16,18 +16,19 @@ import MapsUgcIcon from '@mui/icons-material/MapsUgc';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import Grid from "@mui/material/Grid";
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 
 
 
 export const MuiStations = () => {
     return (
-        <Box m={4} overflow={'hidden'}>
+        <Box ml={15} overflow={'hidden'}>
 
             <Stack direction="row" spacing={2}>
                 {/* First column */}
 
-                <Box width='53%' >
+                <Box width='48%' sx={{ backgroundColor: '#ffff' }}   >
                     <Box sx={{ backgroundColor: '#ffff' }}  >
                         {/* BioMedical heading */}
                         <Box >
@@ -135,155 +136,257 @@ export const MuiStations = () => {
                             </Grid>
 
                         </Box>
-                        {/* Station session 1 */}
-                        <Box >
+                        <Box sx={{ height: 450, overflow: 'scroll' }}>
+                            {/* Station session 1 */}
+                            <Box >
 
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white', '&:hover': {
-                                    backgroundColor: '#E8F0F8',
-                                    opacity: [0.9, 0.8, 0.7],
-                                },
-                            }}>
-                                <Box
-                                    sx={{
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Stack spacing={3} direction="row" alignBoxs="center">
-                                        <Tooltip
-                                            title="John S Smith 555-555-5555 Facility Manager"
-                                            placement="right"
-                                            arrow
-                                        >
-                                            <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
+                                <Grid container sx={{
+                                    backgroundColor: 'white', '&:hover': {
+                                        backgroundColor: '#E8F0F8',
+                                        opacity: [0.9, 0.8, 0.7],
+                                    },
+                                }}>
+                                    <Grid item xs={12}
+                                        sx={{
+                                            mx: 'auto',
+                                            p: 2,
+                                        }}
+                                    >
+                                        <Grid container spacing={1} gap={2} alignBoxs="center">
+                                            <Grid item xs={1}>
+                                                <Tooltip
+                                                    title="John S Smith 555-555-5555 Facility Manager"
+                                                    placement="right"
+                                                    arrow
+                                                >
+                                                    <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
+                                            </Grid>
+                                            <Grid item xs={7} alignBoxs="center">
+                                                <Typography noWrap variant='h6'>John S Smith</Typography>
+                                                <Typography variant='body2'>04/04 2:25 AM  4  <IconButton>
+                                                    <ArrowDropDownCircleIcon /></IconButton>  </Typography>
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Typography variant='caption' >Bi-Plane</Typography>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <FileDownloadOutlinedIcon />
+                                            </Grid>
+                                        </Grid>
 
-                                        <Stack direction="column" alignBoxs="center">
-                                            <Typography noWrap variant='h6'>John S Smith</Typography>
-                                            <Typography variant='body2'>04/04 2:25 AM  4  <IconButton>
-                                                <ArrowDropDownCircleIcon /></IconButton>  </Typography>
-                                        </Stack>
-                                        <Typography variant='caption' sx={{ paddingLeft: 45 }}>Bi-Plane</Typography>
 
-                                        <FileDownloadOutlinedIcon />
-                                    </Stack>
-                                    <Typography>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
-
-                                </Box>
-
-                            </Box>
-
-                        </Box>
-                        {/* Station session 2 */}
-                        <Box >
-
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white', '&:hover': {
-                                    backgroundColor: '#E8F0F8',
-                                    opacity: [0.9, 0.8, 0.7],
-                                },
-                            }}>
-                                <Box
-                                    sx={{
-                                        mb: 1,
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Stack spacing={3} direction="row" alignBoxs="center">
-                                        <Tooltip
-                                            title="John S Smith 555-555-5555 Facility Manager"
-                                            placement="right"
-                                            arrow
-                                        >
-                                            <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
-
-                                        <Stack direction="column" alignBoxs="center">
-                                            <Typography noWrap variant='h6'>John S Smith</Typography>
-                                            <Typography variant='body2'> 2:25 AM
-                                            </Typography>
-                                        </Stack>
-                                        <Typography sx={{ paddingLeft: 47 }}><Button variant='outlined' size='small'>reply</Button></Typography>
-                                        <ArrowCircleRightIcon />
-                                    </Stack>
-                                    <Typography>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
-
-                                </Box>
+                                    </Grid>
+                                    <Grid item m={1}>
+                                        <Typography variant='body2'>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
+                                    </Grid>
+                                </Grid>
 
                             </Box>
+                            <Box >
 
-                        </Box>
-                        {/* Station update */}
-                        <Box >
-                            <Stack >
-                                <Accordion direction='row' sx={{ justifyContent: 'center', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'center' }}>
-                                    <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
-                                        <Typography variant='h6' sx={{ paddingLeft: 38, fontSize: 16 }} >Station  Updates</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ height: '100px' }}>
-                                        <Typography></Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                {/* <Typography   >Station  Updates</Typography>
-                                <Box sx={{ paddingLeft: 32 }}>
-                                    <IconButton>
-                                        <AddCircleIcon type="button" />
-                                    </IconButton>
-
-
-                                </Box> */}
-                            </Stack>
-
-                        </Box>
-                        {/* Recognize */}
-                        <Box >
-                            <Stack >
-                                <Accordion direction='row' sx={{ justifyContent: 'end', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'end' }}>
-                                    <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
-                                        <Typography variant='h6' sx={{ paddingLeft: 34, fontSize: 16 }} >Recognize Your Associate</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ height: '100px' }}>
-                                        <Typography></Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                {/* <Typography   >Station  Updates</Typography>
-                                <Box sx={{ paddingLeft: 32 }}>
-                                    <IconButton>
-                                        <AddCircleIcon type="button" />
-                                    </IconButton>
+                                <Grid container sx={{
+                                    backgroundColor: 'white', '&:hover': {
+                                        backgroundColor: '#E8F0F8',
+                                        opacity: [0.9, 0.8, 0.7],
+                                    },
+                                }}>
+                                    <Grid item xs={12}
+                                        sx={{
+                                            mx: 'auto',
+                                            p: 2,
+                                        }}
+                                    >
+                                        <Grid container spacing={1} gap={2} alignBoxs="center">
+                                            <Grid item xs={1}>
+                                                <Tooltip
+                                                    title="John S Smith 555-555-5555 Facility Manager"
+                                                    placement="right"
+                                                    arrow
+                                                >
+                                                    <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
+                                            </Grid>
+                                            <Grid item xs={8} alignBoxs="center">
+                                                <Typography noWrap variant='h6'>John S Smith</Typography>
+                                                <Typography variant='body2'> 2:25 AM
+                                                </Typography>
+                                            </Grid>
+                                            <Grid item xs={1}><Button variant='outlined' size='small'>
+                                                <Typography variant='caption' >reply</Typography></Button>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <ArrowCircleRightIcon />
+                                            </Grid>
+                                        </Grid>
 
 
-                                </Box> */}
-                            </Stack>
+                                    </Grid>
+                                    <Grid item m={1}>
+                                        <Typography variant='body2'>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
+                                    </Grid>
+                                </Grid>
 
-                        </Box>
-                        {/* Rate this station */}
-                        <Box >
-                            <Stack >
-                                <Accordion direction='row' sx={{ justifyContent: 'end', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'end' }}>
-                                    <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
-                                        <Typography variant='h6' sx={{ paddingLeft: 38, fontSize: 16 }} >Rate this station</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ height: '100px' }}>
-                                        <Typography></Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                {/* <Typography   >Station  Updates</Typography>
-                                <Box sx={{ paddingLeft: 32 }}>
-                                    <IconButton>
-                                        <AddCircleIcon type="button" />
-                                    </IconButton>
+                            </Box>
+                            <Box >
+
+                                <Grid container sx={{
+                                    backgroundColor: 'white', '&:hover': {
+                                        backgroundColor: '#E8F0F8',
+                                        opacity: [0.9, 0.8, 0.7],
+                                    },
+                                }}>
+                                    <Grid item xs={12}
+                                        sx={{
+                                            mx: 'auto',
+                                            p: 2,
+                                        }}
+                                    >
+                                        <Grid container spacing={1} gap={2} alignBoxs="center">
+                                            <Grid item xs={1}>
+                                                <Tooltip
+                                                    title="John S Smith 555-555-5555 Facility Manager"
+                                                    placement="right"
+                                                    arrow
+                                                >
+                                                    <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
+                                            </Grid>
+                                            <Grid item xs={8} alignBoxs="center">
+                                                <Typography noWrap variant='h6'>John S Smith</Typography>
+                                                <Typography variant='body2'> 2:25 AM    </Typography>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Button variant='outlined' size='small'>
+                                                    <Typography variant='caption' >reply</Typography></Button>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <ArrowCircleRightIcon />
+                                            </Grid>
+                                        </Grid>
 
 
-                                </Box> */}
-                            </Stack>
+                                    </Grid>
+                                    <Grid item m={1}>
+                                        <Typography variant='body2'>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
+                                    </Grid>
+                                </Grid>
 
+                            </Box>
+                            <Box >
+
+                                <Grid container sx={{
+                                    backgroundColor: 'white', '&:hover': {
+                                        backgroundColor: '#E8F0F8',
+                                        opacity: [0.9, 0.8, 0.7],
+                                    },
+                                }}>
+                                    <Grid item xs={12}
+                                        sx={{
+                                            mx: 'auto',
+                                            p: 2,
+                                        }}
+                                    >
+                                        <Grid container spacing={1} gap={2} alignBoxs="center">
+                                            <Grid item xs={1}>
+                                                <Tooltip
+                                                    title="John S Smith 555-555-5555 Facility Manager"
+                                                    placement="right"
+                                                    arrow
+                                                >
+                                                    <Avatar alt='John s smith' sx={{ width: 55, height: 55 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' /></Tooltip>
+                                            </Grid>
+                                            <Grid item xs={8} alignBoxs="center">
+                                                <Typography noWrap variant='h6'>John S Smith</Typography>
+                                                <Typography variant='body2'> 2:25 AM    </Typography>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Button variant='outlined' size='small'>
+                                                    <Typography variant='caption' >reply</Typography></Button>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <ArrowCircleRightIcon />
+                                            </Grid>
+                                        </Grid>
+
+
+                                    </Grid>
+                                    <Grid item m={1}>
+                                        <Typography variant='body2'>Our new Bi-plane Imaging suite is completed. It is state of the art. We received donations for most of this cost. This will greatly improved imaging services and enhance patient care. Thanks</Typography>
+                                    </Grid>
+                                </Grid>
+
+                            </Box>
                         </Box>
 
                     </Box>
+                    {/* Station update */}
+                    <Box >
+                        <Stack >
+                            <Accordion direction='row' sx={{ justifyContent: 'center', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'center' }}>
+                                <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
+                                    <Typography variant='h6' sx={{ paddingLeft: 32, fontSize: 16 }} >Station  Updates</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{ height: '100px', bgcolor: '#ffff' }}>
+                                    <Typography></Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                            {/* <Typography   >Station  Updates</Typography>
+                                <Box sx={{ paddingLeft: 32 }}>
+                                    <IconButton>
+                                        <AddCircleIcon type="button" />
+                                    </IconButton>
+
+
+                                </Box> */}
+                        </Stack>
+
+                    </Box>
+                    {/* Recognize */}
+                    <Box >
+                        <Stack >
+                            <Accordion direction='row' sx={{ justifyContent: 'end', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'end' }}>
+                                <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
+                                    <Typography variant='h6' sx={{ paddingLeft: 28, fontSize: 16 }} >Recognize Your Associate</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{ height: '100px', bgcolor: '#ffff' }}>
+                                    <Typography></Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                            {/* <Typography   >Station  Updates</Typography>
+                                <Box sx={{ paddingLeft: 32 }}>
+                                    <IconButton>
+                                        <AddCircleIcon type="button" />
+                                    </IconButton>
+
+
+                                </Box> */}
+                        </Stack>
+
+                    </Box>
+                    {/* Rate this station */}
+                    <Box >
+                        <Stack >
+                            <Accordion direction='row' sx={{ justifyContent: 'end', mb: 1, backgroundColor: '#D2DEE8', alignItems: 'end' }}>
+                                <AccordionSummary id='panel1-header' aria-controls='panel1-content' expandIcon={<AddCircleIcon />}>
+                                    <Typography variant='h6' sx={{ paddingLeft: 32, fontSize: 16 }} >Rate this station</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{ height: '100px', bgcolor: '#ffff' }}>
+                                    <Typography></Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                            {/* <Typography   >Station  Updates</Typography>
+                                <Box sx={{ paddingLeft: 32 }}>
+                                    <IconButton>
+                                        <AddCircleIcon type="button" />
+                                    </IconButton>
+
+
+                                </Box> */}
+                        </Stack>
+
+                    </Box>
+
                 </Box>
                 {/* Second Column */}
-                <Box width='37%'>
+                <Box width='43%'>
                     <Box sx={{ backgroundColor: '#ffff' }}  >
                         {/* Station Photos */}
                         <Box>
@@ -307,12 +410,32 @@ export const MuiStations = () => {
                                         p: 2,
                                     }}
                                 >
-                                    <Stack spacing={1} direction="row" height="200px" sx={{ justifyContent: 'center' }}>
+                                    <Grid container spacing={1} sx={{ justifyContent: 'center', p: 1 }}>
+                                        <Grid item >
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
+                                        <Grid item>
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
 
-                                        <Typography noWrap variant='body' sx={{}}>No Photos Yet</Typography>
+                                        <Grid item>
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
 
+                                    </Grid>
+                                    <Grid container spacing={1} sx={{ justifyContent: 'center', p: 1 }}>
+                                        <Grid item>
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
+                                        <Grid item>
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
 
-                                    </Stack>
+                                        <Grid item>
+                                            <Avatar src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt='Bio mediacl' sx={{ borderRadius: '22px', width: 171, height: 120 }} />
+                                        </Grid>
+
+                                    </Grid>
 
                                 </Box>
 
@@ -342,49 +465,58 @@ export const MuiStations = () => {
 
                         </Box>
                         <Box >
-
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white'
-                            }}>
-                                <Box
-                                    sx={{
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Stack spacing={1} direction="row" height="100px" sx={{ justifyContent: 'center' }}>
-
-                                        <Typography noWrap variant='body' sx={{}}> <Box >
-
-                                            <Box sx={{
-                                                flexGrow: 1, backgroundColor: 'white'
-                                            }}>
-                                                <Box
-                                                    sx={{
-                                                        mx: 'auto',
-                                                        p: 2,
-                                                    }}
-                                                >
-                                                    <Stack spacing={1} direction="row" height="150px" sx={{ justifyContent: 'center' }}>
-
-                                                        <Typography noWrap variant='body' sx={{}}>No Project Boards</Typography>
-
-
-                                                    </Stack>
-
-                                                </Box>
-
-                                            </Box>
-
-                                        </Box></Typography>
-
-
-                                    </Stack>
-
+                            <Stack  >
+                                <Box m={1} height="150px" width="auto" sx={{ justifyContent: 'center' }} overflow='scroll'>
+                                    <Grid container spacing={1} m={1} width="auto" >
+                                        <Grid item xs={1}>
+                                            <ArrowDropDownCircleIcon size="small" />
+                                        </Grid>
+                                        <Grid item xs={5}>
+                                            <Typography sx={{ fontSize: 13 }}><Link underline="hover">Add Your Project Name</Link></Typography>
+                                        </Grid>
+                                        <Grid item xs={6} >
+                                            <Slider sx={{ color: '#00FFFF' }} defaultValue={50} valueLabelDisplay='auto' />
+                                        </Grid>
+                                    </Grid>
+                                    <Divider />
+                                    <Grid container spacing={1} m={1} width="auto" >
+                                        <Grid item xs={1}>
+                                            <ArrowDropDownCircleIcon size="small" />
+                                        </Grid>
+                                        <Grid item xs={5}>
+                                            <Typography sx={{ fontSize: 13 }}><Link underline="hover">Add Your Project Name</Link></Typography>
+                                        </Grid>
+                                        <Grid item xs={6} >
+                                            <Slider sx={{ color: '#00FFFF' }} defaultValue={50} valueLabelDisplay='auto' />
+                                        </Grid>
+                                    </Grid>
+                                    <Divider />
+                                    <Grid container spacing={1} m={1} width="auto" >
+                                        <Grid item xs={1}>
+                                            <ArrowDropDownCircleIcon size="small" />
+                                        </Grid>
+                                        <Grid item xs={5}>
+                                            <Typography sx={{ fontSize: 13 }}><Link underline="hover">Cerner Upgrade</Link></Typography>
+                                        </Grid>
+                                        <Grid item xs={6} >
+                                            <Slider sx={{ color: '#00FFFF' }} defaultValue={50} valueLabelDisplay='auto' />
+                                        </Grid>
+                                    </Grid>
+                                    <Divider />
+                                    <Grid container spacing={1} m={1} width="auto"  >
+                                        <Grid item xs={1}>
+                                            <ArrowDropDownCircleIcon size="small" />
+                                        </Grid>
+                                        <Grid item xs={5}>
+                                            <Typography sx={{ fontSize: 13 }}><Link underline="hover">Help Desk</Link></Typography>
+                                        </Grid>
+                                        <Grid item xs={6} >
+                                            <Slider sx={{ color: '#00FFFF' }} defaultValue={50} valueLabelDisplay='auto' />
+                                        </Grid>
+                                    </Grid>
+                                    <Divider />
                                 </Box>
-
-                            </Box>
-
+                            </Stack>
                         </Box>
                         {/* Station Files */}
                         <Box >
@@ -397,43 +529,97 @@ export const MuiStations = () => {
                         </Box>
                         <Box >
 
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white'
-                            }}>
-                                <Box
-                                    sx={{
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Stack spacing={1} direction="row" height="100px" sx={{ justifyContent: 'center' }}>
+                            <Stack>
+                                <Box>
+                                    <Stack m={1}>
+                                        <Grid container >
+                                            <Grid item xs={8} >
+                                                <Grid container underline="hover" sx={{ backgroundColor: '#E1F8F9', alignItems: 'center' }}>
+                                                    <Grid item xs={9}>
+                                                        <Link underline="hover">PM Complition Report</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Link underline="hover">x</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <PictureAsPdfIcon />
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Avatar alt='John s smith' sx={{ width: 30, height: 30 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' />
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={4} >
+                                                <Grid container underline="hover" sx={{ alignItems: 'center' }}>
+                                                    <Grid item >
+                                                        <Typography variant='caption'>12.15.2018 9.34 KB</Typography></Grid>
+                                                </Grid>
 
-                                        <Typography noWrap variant='body' sx={{}}> <Box >
+                                            </Grid>
 
-                                            <Box sx={{
-                                                flexGrow: 1, backgroundColor: 'white'
-                                            }}>
-                                                <Box
-                                                    sx={{
-                                                        mx: 'auto',
-                                                        p: 2,
-                                                    }}
-                                                >
-
-
-                                                </Box>
-
-                                            </Box>
-
-                                        </Box></Typography>
-
+                                        </Grid>
 
                                     </Stack>
+                                    <Stack m={1}>
+                                        <Grid container >
+                                            <Grid item xs={8} >
+                                                <Grid container underline="hover" sx={{ backgroundColor: '#E1F8F9', alignItems: 'center' }}>
+                                                    <Grid item xs={9}>
+                                                        <Link underline="hover">IT infrastructure</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Link underline="hover" >x</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <PictureAsPdfIcon />
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Avatar alt='John s smith' sx={{ width: 30, height: 30 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' />
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={4} >
+                                                <Grid container underline="hover" sx={{ alignItems: 'center' }}>
+                                                    <Grid item >
+                                                        <Typography variant='caption'>12.15.2018  50.14 KB</Typography></Grid>
+                                                </Grid>
 
+                                            </Grid>
+
+                                        </Grid>
+
+                                    </Stack>
+                                    <Stack m={1}>
+                                        <Grid container >
+                                            <Grid item xs={8} >
+                                                <Grid container  sx={{ backgroundColor: '#E1F8F9', alignItems: 'center' }}>
+                                                    <Grid item xs={9}>
+                                                        <Link  underline="hover">Projects Updates</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Link underline="hover" >x</Link>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <PictureAsPdfIcon />
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <Avatar alt='John s smith' sx={{ width: 30, height: 30 }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQPQmH3gZw6BGda2FbR4lpxXr09NZsI_axIg&usqp=CAU' />
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={4}  >
+                                                <Grid container underline="hover"  sx={{ alignItems: 'center' }}>
+                                                    <Grid item xs={12}>
+                                                        <Typography variant='caption'>12.15.2018 50.14 KB</Typography></Grid>
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+
+                                    </Stack>
                                 </Box>
-
-                            </Box>
-
+                            </Stack>
                         </Box>
                         {/* Task Board */}
                         <Box >
@@ -456,90 +642,61 @@ export const MuiStations = () => {
 
                         </Box>
                         <Box >
-
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white'
-                            }}>
-                                <Box
-                                    sx={{
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Stack spacing={1} direction="row" height="50px" sx={{ justifyContent: 'center' }}>
-
-                                        <Typography noWrap variant='body' sx={{}}> <Box >
-
-                                            <Box sx={{
-                                                flexGrow: 1, backgroundColor: 'white'
-                                            }}>
-                                                <Box
-                                                    sx={{
-                                                        mx: 'auto',
-                                                        p: 2,
-                                                    }}
-                                                >
-                                                    <Stack spacing={1} direction="row" height="50px" sx={{ justifyContent: 'center' }}>
-
-                                                        <Typography noWrap variant='body' sx={{}}>No Project Tasks entered</Typography>
-
-
-                                                    </Stack>
-
-                                                </Box>
-
-                                            </Box>
-
-                                        </Box></Typography>
-
-
-                                    </Stack>
-
+                            <Stack>
+                                <Box m={0.5}>
+                                    <Grid container >
+                                        <Grid item xs={3} p={1} sx={{ backgroundColor: '#B6C8F7' }}>
+                                            <Link underline="hover" sx={{ color: 'black' }}>Cerner Upgrade</Link>
+                                            <Typography paddingLeft={15}>1</Typography>
+                                        </Grid>
+                                        <Grid item xs={3} p={1} sx={{ backgroundColor: '#F7B6E3' }}>
+                                            <Link underline="hover" sx={{ color: 'black' }}>Single Sign-on</Link>
+                                            <Typography paddingLeft={15}>1</Typography>
+                                        </Grid>
+                                        <Grid item xs={3} p={1} sx={{ backgroundColor: '#B6F7F5' }}>
+                                            <Link underline="hover" sx={{ color: 'black' }}>Bar Codings</Link>
+                                            <Typography paddingLeft={15}>1</Typography>
+                                        </Grid>
+                                        <Grid item xs={3} p={1} sx={{ backgroundColor: '#F7DAB6' }}>
+                                            <Link underline="hover" sx={{ color: 'black' }}>Help Desk</Link>
+                                            <Typography paddingLeft={15}>1</Typography>
+                                        </Grid>
+                                    </Grid>
                                 </Box>
-
-                            </Box>
+                            </Stack>
 
                         </Box>
                         {/* Add view/station meassgaes */}
                         <Box >
                             <Grid container sx={{ justifyContent: 'end', backgroundColor: '#D2DEE8', alignItems: 'center' }}>
                                 <Grid item xs={8}>
-                                    <Typography variant='h6' sx={{  fontSize: 16 }} > Add/Views Station Messages</Typography>
+                                    <Typography variant='h6' sx={{ fontSize: 16 }} > Add/Views Station Messages</Typography>
                                 </Grid>
                             </Grid>
 
                         </Box>
                         <Box >
 
-                            <Box sx={{
-                                flexGrow: 1, backgroundColor: 'white',
-
-                            }}>
-                                <Box
-                                    sx={{
-                                        mx: 'auto',
-                                        p: 2,
-                                    }}
-                                >
-                                    <Grid container   alignBoxs="center" justifyContent={'center'} gap={2}>
-                                        <Grid item xs={4} sx={{ width: 230, height: 65, backgroundColor: '#CCCCCC', display: 'flex' }}  ><Avatar sx={{ m: 2 }}><MailOutlinedIcon /></Avatar><Avatar sx={{ m: 2 }}><MailOutlinedIcon /></Avatar></Grid>
-                                        <Grid item xs={2} sx={{ width: 100, height: 65, backgroundColor: '#CCCCCC', borderRadius: 6 }} ></Grid>
-                                        <Grid item xs={4} sx={{ width: 230, height: 65, backgroundColor: '#CCCCCC', display: 'flex' }} ><Avatar sx={{ m: 2 }}><MicOutlinedIcon /></Avatar><Avatar sx={{ m: 2 }}><MapsUgcIcon /></Avatar></Grid>
+                            <Stack >
+                                <Box m={1.5}>
+                                    <Grid container alignBoxs="center" justifyContent='center' columnSpacing={2} >
+                                        <Grid item xs={4} sx={{ backgroundColor: '#CCCCCC', display: 'flex' }}  ><Avatar sx={{ m: 2 }}><MailOutlinedIcon /></Avatar><Avatar sx={{ m: 2 }}><MailOutlinedIcon /></Avatar></Grid>
+                                        <Grid item xs={3} ><Avatar sx={{ width: 116, height: 72 }} variant="rounded" src='https://th.bing.com/th/id/OIP.iez8AFzNxrjU-tZ0fYGP5wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7' /></Grid>
+                                        <Grid item xs={4} sx={{ backgroundColor: '#CCCCCC', display: 'flex' }} ><Avatar sx={{ m: 2 }}><MicOutlinedIcon /></Avatar><Avatar sx={{ m: 2 }}><MapsUgcIcon /></Avatar></Grid>
 
 
                                     </Grid>
-
                                 </Box>
 
-                            </Box>
+                            </Stack>
 
                         </Box>
 
                     </Box>
 
                 </Box>
-            </Stack>
-        </Box>
+            </Stack >
+        </Box >
 
 
     )
