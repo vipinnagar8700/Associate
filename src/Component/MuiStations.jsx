@@ -676,7 +676,6 @@ export const MuiStations = () => {
 
                         </Box>
                         <Box >
-
                             <Stack >
                                 <Box m={1.5}>
                                     <Grid container alignBoxs="center" justifyContent='center' columnSpacing={2} >

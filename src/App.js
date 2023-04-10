@@ -1,5 +1,7 @@
 import './App.css';
-import { MuiStations } from './Component/MuiStations';
+// import { Stations } from './Component/stationsAll';
+import { AddSession } from './Component/AddSession';
+// import { MuiStations } from './Component/MuiStations';
 // import { MuiSearch } from './Component/MuiSearch';
 // import { MuiSession } from './Component/MuiSession';
 // import { Associate } from './Component/Associate';
@@ -10,7 +12,9 @@ function App() {
   //  <Associate/>s
   //  <MuiSearch/>
   // <MuiSession/>
-  <MuiStations/>
+  <AddSession/>
+  // <MuiStations/>
+  // <Stations/>
   );
 }
 
